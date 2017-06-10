@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="FACULDADE">
+	    <description>Persistence Unit do Meu Projeto de Teste</description>
+	    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	    <properties>
+	      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+	      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/faculdade" />
+	      <property name="javax.persistence.jdbc.user" value="root" />
+	      <property name="javax.persistence.jdbc.password" value="admin" />
+	      <property name="javax.persistence.query.timeout" value="10000"/><!-- 10 segundos -->
+
+ 			<!--Hibernate properties-->
+	      <property name="hibernate.default_schema" value="FACULDADE" />
+	      <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- property name="hibernate.hbm2ddl.auto" value="validate" / --><!-- "Validate" evita criAcao de tabelas e Colunas  -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/><!-- "Update" Cria tabelas e Colunas faltantes -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+            <!--  property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/ -->
+            
+            <!-- Configuracoes de Cache do Hibernate -->
+			<!--  property name="hibernate.cache.use_second_level_cache" value="true" / -->
+			<!--  property name="hibernate.cache.use_query_cache" value="true" / -->
+			<!--  property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" / -->
+			<!--  property name="hibernate.cache.region.factory_class" value="org.terracotta.hibernate.TerracottaHibernateCacheProvider"/ -->
+			<!--  property name="hibernate.generate_statistics" value="true" / -->
+			<!--  property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.EhCacheRegionFactory"/ -->
+			
+	    </properties>
+	</persistence-unit>
+</persistence>
